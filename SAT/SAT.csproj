@@ -128,15 +128,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clique\Clique.cs" />
-    <Compile Include="Clique\Clique_BDD.cs" />
     <Compile Include="Clique\ColoredEdge.cs" />
     <Compile Include="DPLL\CNF.cs" />
     <Compile Include="DPLL\DPLL.cs" />
     <Compile Include="DPLL\Literal.cs" />
     <Compile Include="DPLL\TseitinTransformer.cs" />
     <Compile Include="ExpressionParser.cs" />
-    <Compile Include="LBDD\LBDD.cs" />
-    <Compile Include="LBDD\LBDDNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="States\AbstractParserState.cs" />

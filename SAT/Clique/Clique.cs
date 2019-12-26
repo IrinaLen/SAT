@@ -22,7 +22,7 @@ namespace SAT.Clique
             {
                 n++;
                 Console.WriteLine("n = " + n);
-            } while (Solve2()) ;
+            } while (Solve()) ;
                 Console.WriteLine("Result: n = {0}", n - 1);
             return n - 1;
         }
@@ -131,36 +131,6 @@ namespace SAT.Clique
             return result;
         }
 
-
-        private bool Solve2()
-        {
-            nameId = new Dictionary<ColoredEdge, int>(); // i, об color
-            GenerateVariables();
-
-            var cnf = new DPLL.CNF();
-            //not one color in clique
-            for (int c = 1; c <= colorNum; c++)
-            {
-                cnf.Add(GenerateCliqueNotOneColor(c));
-            }
-
-            for (int i = 1; i < n; i++)
-            {
-                for (int j = i + 1; j <= n; j++)
-                {
-                    Literal[] lits = new Literal[colorNum];
-                    for (int c = 1; c <= colorNum; c++)
-                    {
-                        lits[c - 1] = new Literal(nameId[new ColoredEdge(i, j, c)]);
-                    }
-                    cnf.Add(lits);
-                }
-            }
-
-            var dpll = new DPLL.DPLL(nameId.Values.ToArray());
-            return dpll.DPLLAlgo(cnf);
-
-        }
 
     }
 }
